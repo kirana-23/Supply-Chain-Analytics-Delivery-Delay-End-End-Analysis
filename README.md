@@ -27,8 +27,7 @@ This project performs an end-to-end Exploratory Data Analysis (EDA) on the **Dat
 Supply-Chain-Analysis/
 │
 ├── Supply_Chain_Analysis.ipynb   # Main Jupyter Notebook with full EDA
-├── dashboard/
-│   └── supply_chain_dashboard.png  # Power BI Dashboard screenshot
+├── Supply_chain_analytics_dashboard.png  # Power BI Dashboard screenshot
 └── README.md
 ```
 
