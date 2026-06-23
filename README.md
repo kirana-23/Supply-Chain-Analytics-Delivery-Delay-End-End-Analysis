@@ -26,8 +26,9 @@ This project performs an end-to-end Exploratory Data Analysis (EDA) on the **Dat
 ```
 Supply-Chain-Analysis/
 │
-├── Supply_Chain_Analysis.ipynb   # Main Jupyter Notebook with full EDA
-├── Supply_chain_analytics_dashboard.png  # Power BI Dashboard screenshot
+├── Supply_Chain_Analysis.ipynb        # Main Jupyter Notebook with full EDA
+├── Supply_Chain_Dashboard.pbix        # Power BI Dashboard file
+├── Supply_chain_analytics_dashboard.png     # Power BI Dashboard screenshot
 └── README.md
 ```
 
@@ -38,6 +39,8 @@ Supply-Chain-Analysis/
 **Source:** [DataCo Smart Supply Chain for Big Data Analysis – Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
 The dataset contains transactional supply chain records including order details, customer demographics, product categories, shipping modes, delivery statuses, and financial metrics.
+
+> ⚠️ **Note:** The dataset is not included in this repository due to its large file size. Please download it directly from Kaggle using the link above and place it in the root directory before running the notebook.
 
 **After cleaning, the following columns were retained:**
 
@@ -64,7 +67,7 @@ The dataset contains transactional supply chain records including order details,
 | Matplotlib | Static visualizations |
 | Seaborn | Statistical charts |
 | Jupyter Notebook | Interactive analysis environment |
-| Power BI | Interactive dashboard |
+| Power BI | Interactive dashboard (.pbix) |
 
 ---
 
@@ -106,6 +109,10 @@ The dataset contains transactional supply chain records including order details,
 
 The Power BI dashboard provides an interactive summary of key supply chain KPIs including delivery status breakdown, regional performance, and sales trends.
 
+The `.pbix` file (`Supply_chain_Dashboard.pbix`) is included in this repository — open it in **Power BI Desktop** to explore the full interactive report.
+
+> 📎 See `Supply_chain_analytics_dashboard.png` for a static preview.
+
 ---
 
 ## 💡 Key Insights
@@ -136,10 +143,15 @@ The Power BI dashboard provides an interactive summary of key supply chain KPIs 
    jupyter notebook Supply_Chain_Analysis.ipynb
    ```
 
-4. Ensure `DataCoSupplyChainDataset.csv` is in the same directory (or update the file path in the notebook).
+4. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis), place `DataCoSupplyChainDataset.csv` in the root directory, and update the file path in the notebook if needed.
 
 ---
 
+## 📌 Note on SQL
+
+This project does not include SQL queries. All analysis was performed entirely in Python using Pandas and visualized with Matplotlib/Seaborn and Power BI.
+
+---
 
 ## 🙋 Author
 
