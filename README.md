@@ -146,13 +146,6 @@ The `.pbix` file (`Supply_chain_Dashboard.pbix`) is included in this repository 
 4. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis), place `DataCoSupplyChainDataset.csv` in the root directory, and update the file path in the notebook if needed.
 
 ---
-
-## 📌 Note on SQL
-
-This project does not include SQL queries. All analysis was performed entirely in Python using Pandas and visualized with Matplotlib/Seaborn and Power BI.
-
----
-
 ## 🙋 Author
 
 **Kirana**
