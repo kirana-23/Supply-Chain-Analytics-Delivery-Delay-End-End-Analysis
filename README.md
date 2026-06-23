@@ -108,8 +108,6 @@ The dataset contains transactional supply chain records including order details,
 
 The Power BI dashboard provides an interactive summary of key supply chain KPIs including delivery status breakdown, regional performance, and sales trends.
 
-> 📎 See `dashboard/supply_chain_dashboard.png` for a preview.
-
 ---
 
 ## 💡 Key Insights
