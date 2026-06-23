@@ -1,0 +1,2 @@
+# Supply-Chain-Analytics-Delivery-Delay-End-End-Analysis
+The Project analyzes supply chain operations using DataCo Supply Chain Dataset to uncover delivery delays, logistics bottlenecks, and operational performance trends. By leveraging Python, SQL, and Power BI, the analysis identifies key factors affecting order fulfillment and delivery efficiency while providing actionable business recommendations.
