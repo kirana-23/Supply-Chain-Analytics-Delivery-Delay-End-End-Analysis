@@ -1,158 +1,239 @@
-# 🚚 Supply Chain Analysis
+# 📦 Supply Chain Analytics – Delivery Delay & Performance Analysis
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python) ![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-green) ![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-orange) ![Matplotlib](https://img.shields.io/badge/Matplotlib-Plots-red) ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter) ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow?logo=powerbi)
+An end-to-end Data Analytics project focused on analyzing supply chain operations, identifying delivery delays, evaluating logistics performance, and uncovering sales and operational trends using Python and Power BI.
 
 ---
 
 ## 📌 Project Overview
 
-This project performs an end-to-end Exploratory Data Analysis (EDA) on the **DataCo Supply Chain Dataset**, a real-world e-commerce logistics dataset. The goal is to uncover patterns in delivery performance, sales trends, product profitability, and regional logistics behavior — ultimately helping businesses reduce late deliveries and optimize supply chain operations.
+Efficient supply chain management plays an important role in customer satisfaction, order fulfillment, and business profitability.
 
----
+This project analyzes the **DataCo Smart Supply Chain Dataset** to understand delivery performance, identify logistics bottlenecks, explore sales trends, and evaluate operational efficiency.
 
-## 🎯 Objectives
+Using Python for data cleaning and exploratory data analysis and Power BI for interactive visualization, the project transforms raw supply chain data into meaningful business insights and actionable recommendations.
 
-- Analyze delivery status distribution and identify late delivery patterns
-- Investigate region-wise, customer segment-wise, and category-wise late delivery rates
-- Understand the impact of shipping mode and payment type on delivery performance
-- Track monthly order volume trends over time
-- Identify top-performing products and categories by sales and profit
-- Pinpoint cities with the highest order frequency and late delivery counts
+## 🎯 Business Objectives
 
----
+- Analyze delivery status distribution and identify late delivery patterns.
+- Investigate region-wise, customer segment-wise, and category-wise delivery performance.
+- Understand the impact of shipping mode and payment type on delivery delays.
+- Analyze monthly order volume trends.
+- Identify top-performing products and categories based on sales and profit.
+- Identify cities with high order frequency and late delivery counts.
+- Provide business recommendations to improve logistics and delivery efficiency.
 
-## 📂 Repository Structure
+## 📊 Dataset Information
 
-```
-Supply-Chain-Analysis/
-│
-├── Supply_Chain_Analysis.ipynb        # Main Jupyter Notebook with full EDA
-├── Supply_Chain_Dashboard.pbix        # Power BI Dashboard file
-├── Supply_chain_analytics_dashboard.png     # Power BI Dashboard screenshot
-└── README.md
-```
+- **Dataset:** DataCo Smart Supply Chain Dataset
+- **Source:** Kaggle
+- **Domain:** E-commerce and Supply Chain Operations
+- **Target Feature:** Delivery Status
+- **Engineered Feature:** `is_late`
 
----
+The dataset contains transactional supply chain information, including:
 
-## 📊 Dataset
+- Customer demographics and segments.
+- Order details and order dates.
+- Product categories and product names.
+- Shipping modes and delivery information.
+- Sales and profitability metrics.
+- Geographic and regional information.
 
-**Source:** [DataCo Smart Supply Chain for Big Data Analysis – Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
+**Dataset Source:** [DataCo Smart Supply Chain for Big Data Analysis – Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)
 
-The dataset contains transactional supply chain records including order details, customer demographics, product categories, shipping modes, delivery statuses, and financial metrics.
+The dataset is not included in this repository due to its size. Download it from Kaggle and place the original CSV in the repository's root directory before running the notebook.
 
-> ⚠️ **Note:** The dataset is not included in this repository due to its large file size. Please download it directly from Kaggle using the link above and place it in the root directory before running the notebook.
+## 🛠️ Tools & Technologies
 
-**After cleaning, the following columns were retained:**
-
-| Category | Key Columns |
+| Technology | Purpose |
 |---|---|
-| Customer Info | Customer City, Customer Country, Customer Segment |
-| Order Info | Order Region, Order City, Order Status, order date |
-| Product Info | Product Name, Category Name, Department Name |
-| Shipping | Shipping Mode, Days for shipment (scheduled), Days for shipping (real) |
-| Financials | Sales, Order Profit Per Order, Order Item Quantity |
-| Target | Delivery Status, is_late (engineered) |
-
-> **Note:** Columns dropped during cleaning include Customer Email, Customer Password, Product Image, Latitude/Longitude, and other PII/redundant fields.
-
----
-
-## 🛠 Tools & Libraries
-
-| Tool | Purpose |
-|---|---|
-| Python | Core programming language |
+| Python | Data analysis and preprocessing |
 | Pandas | Data manipulation and cleaning |
 | NumPy | Numerical operations |
-| Matplotlib | Static visualizations |
-| Seaborn | Statistical charts |
-| Jupyter Notebook | Interactive analysis environment |
-| Power BI | Interactive dashboard (.pbix) |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical visualization |
+| Jupyter Notebook | Exploratory data analysis |
+| Power BI | Interactive dashboard development |
+
+## 🔄 Project Workflow
+
+### 1. Data Loading and Exploration
+
+- Loaded the DataCo Supply Chain Dataset using Pandas.
+- Examined dataset dimensions, data types, and column information.
+- Analyzed descriptive statistics and unique values.
+- Explored delivery status and order distributions.
+- Identified irrelevant columns and data quality issues.
+
+### 2. Data Cleaning and Feature Engineering
+
+- Removed 21 irrelevant and personally identifiable information (PII) or redundant columns.
+- Created an `is_late` binary feature to identify late deliveries.
+- Engineered `Delay_ship_days` using scheduled and actual shipping days.
+- Converted order dates into datetime format.
+- Extracted Order Year and Order Month for time-based analysis.
+- Retained relevant customer, order, product, shipping, financial, and delivery information.
+
+### 3. Delivery Performance Analysis
+
+Analyzed delivery performance across multiple business dimensions.
+
+Key analysis areas:
+
+- Delivery status distribution.
+- Region-wise late delivery percentage.
+- Customer segment-wise late delivery percentage.
+- Product category-wise late delivery percentage.
+- Shipping mode versus late deliveries.
+- Payment type versus late deliveries.
+
+### 4. Sales and Logistics Performance Analysis
+
+Explored sales and operational performance to identify business trends.
+
+Analysis included:
+
+- Sales by product category.
+- Monthly order volume trends.
+- Top 10 products by sales.
+- Top 10 categories by sales.
+- Top 10 categories by average profit.
+- Top 10 categories by total profit.
+
+### 5. Geographic Analysis
+
+Evaluated regional sales and delivery performance.
+
+Key analysis areas:
+
+- Top 10 cities by sales.
+- Top 10 cities by order frequency.
+- Top 10 cities with the highest late delivery counts.
+
+### 6. Product Demand Analysis
+
+- Identified the top 10 most purchased products based on total order item quantity.
+- Compared product demand across categories.
+- Explored product performance to support inventory and demand planning.
+
+## 📊 Power BI Dashboard
+
+Developed an interactive Power BI dashboard to present key supply chain performance indicators and operational trends.
+
+The dashboard provides insights into:
+
+- Delivery status distribution.
+- Late delivery performance.
+- Regional delivery performance.
+- Sales by category.
+- Monthly order trends.
+- Product and category performance.
+- Geographic sales and delivery patterns.
+
+**Dashboard File:** `Supply_Chain_Dashboard.pbix`
+
+## 🖥️ Dashboard Preview
+
+![Supply Chain Analytics Power BI Dashboard](Supply_chain_analytics_dashboard.png)
+
+## 🔍 Key Business Insights
+
+- A significant proportion of orders experience late delivery, with certain regions and shipping modes showing higher delivery challenges.
+- Standard Class shipping contributes the highest volume of late deliveries.
+- Certain product categories demonstrate higher late delivery rates, indicating potential inventory or fulfillment challenges.
+- Monthly order volumes show seasonal patterns that can support demand planning.
+- A smaller group of cities and products contributes substantially to sales and delivery activity, making them important areas for operational monitoring.
+
+## 💡 Business Recommendations
+
+- Review shipping performance, especially for Standard Class deliveries.
+- Monitor regions with consistently higher late delivery rates.
+- Investigate product categories experiencing frequent delivery delays.
+- Use monthly order trends to improve demand and inventory planning.
+- Prioritize cities with high late delivery counts for logistics improvements.
+- Monitor sales and profitability across product categories to support business decisions.
+
+## 📁 Project Files
+
+| File | Description |
+|---|---|
+| `Supply_Chain_Analysis.ipynb` | Complete Python data analysis and EDA notebook |
+| `Supply_Chain_Dashboard.pbix` | Interactive Power BI dashboard |
+| `Supply_chain_analytics_dashboard.png` | Dashboard screenshot |
+| `requirements.txt` | Python dependencies |
+| `.gitignore` | Files excluded from Git tracking |
+
+## ⚙️ How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/kirana-23/Supply-Chain-Analytics-Delivery-Delay-End-End-Analysis.git
+```
+
+### 2. Navigate to the project directory
+
+```bash
+cd Supply-Chain-Analytics-Delivery-Delay-End-End-Analysis
+```
+
+### 3. Create a virtual environment
+
+```bash
+python -m venv venv
+```
+
+### 4. Activate the environment
+
+Windows:
+
+```bash
+venv\Scripts\activate
+```
+
+### 5. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 6. Launch Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+Open `Supply_Chain_Analysis.ipynb` and run the notebook.
+
+### 7. Download the dataset
+
+Download the DataCo Supply Chain Dataset from Kaggle and place the original CSV in the repository's root directory.
+
+Ensure the dataset filename and notebook file path match.
+
+## 🚀 Future Enhancements
+
+- Develop predictive models for delivery delay classification.
+- Identify key factors contributing to late deliveries using statistical analysis.
+- Build interactive delivery performance monitoring dashboards.
+- Integrate automated reporting for supply chain KPIs.
+- Explore demand forecasting to support inventory planning.
+
+## ⚠️ Limitations
+
+- The analysis is based on historical supply chain transaction data.
+- Observed relationships do not necessarily establish causation.
+- Historical delivery patterns may not represent future logistics performance.
+- Business recommendations should be validated against current operational conditions.
+
+## 👩‍💻 Author
+
+**Kirana B**
+
+Data Analytics | Python | SQL | Power BI | Excel
+
+GitHub: [kirana-23](https://github.com/kirana-23)
 
 ---
 
-## 🔍 Analysis Performed
-
-### 1. Data Cleaning & Feature Engineering
-- Dropped irrelevant and PII columns (21 columns removed)
-- Created `is_late` binary flag: `1` if Delivery Status = "Late delivery", else `0`
-- Engineered `Delay_ship_days` = Scheduled days − Actual shipping days
-- Parsed `order date (DateOrders)` to extract `Order Year` and `Order Month`
-
-### 2. Delivery Performance Analysis
-- **Delivery Status Distribution** — Bar chart showing count of each delivery status
-- **Region-wise Late Delivery %** — Ranked bar chart of late delivery rate by order region
-- **Customer Segment-wise Late Delivery %** — Late delivery breakdown by Consumer, Corporate, Home Office
-- **Category-wise Late Delivery %** — Late delivery rate across all product categories
-- **Shipping Mode vs Late Deliveries** — Count of late deliveries by shipping mode
-- **Payment Type vs Late Deliveries** — Late delivery counts segmented by payment method
-
-### 3. Sales & Logistic Performance
-- **Sales by Category** — Full-width bar chart across all product categories
-- **Monthly Order Volume Trend** — Time-series line chart (year-month) showing order flow over the dataset period
-- **Top 10 Products by Sales** — Horizontal bar chart of best-selling products
-- **Top 10 Categories by Sales** — Revenue-ranked category comparison
-- **Top 10 Categories by Average Profit** — Profitability per order by category
-- **Top 10 Categories by Total Profit** — Cumulative profit leaders
-
-### 4. Geographic Analysis
-- **Top 10 Cities by Sales** — Revenue by city
-- **Top 10 Cities by Order Frequency** — Most active order cities
-- **Top 10 Cities with Most Late Deliveries** — Delivery problem hotspots
-
-### 5. Product Demand
-- **Top 10 Most Purchased Products** — Based on total order item quantity
-
----
-
-## 📈 Dashboard
-
-The Power BI dashboard provides an interactive summary of key supply chain KPIs including delivery status breakdown, regional performance, and sales trends.
-
-The `.pbix` file (`Supply_chain_Dashboard.pbix`) is included in this repository — open it in **Power BI Desktop** to explore the full interactive report.
-
-> 📎 See `Supply_chain_analytics_dashboard.png` for a static preview.
-
----
-
-## 💡 Key Insights
-
-- A significant share of orders experience **late delivery**, with certain regions and shipping modes being disproportionately impacted.
-- **Standard Class shipping** is associated with the highest volume of late deliveries.
-- Specific **product categories** consistently show higher late delivery rates, suggesting upstream stocking or fulfilment issues.
-- **Monthly order volume** shows clear seasonal trends with notable peaks, useful for demand planning.
-- A small set of **cities and products** drive the majority of both revenue and delivery complaints, making them priority targets for operational improvement.
-
----
-
-## ▶️ How to Run
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/your-username/Supply-Chain-Analysis.git
-   cd Supply-Chain-Analysis
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install pandas numpy matplotlib seaborn jupyter
-   ```
-
-3. Launch the notebook:
-   ```bash
-   jupyter notebook Supply_Chain_Analysis.ipynb
-   ```
-
-4. Download the dataset from [Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis), place `DataCoSupplyChainDataset.csv` in the root directory, and update the file path in the notebook if needed.
-
----
-## 🙋 Author
-
-**Kirana**
-- GitHub: [@kirana-23](https://github.com/kirana-23)
-
----
-
-## 📃 License
-
-Dataset credit: [DataCo Supply Chain Dataset on Kaggle](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis).
+⭐ If you find this project useful, feel free to explore the repository!
